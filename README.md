@@ -10,11 +10,11 @@
 - [Fonction is_numeric()](https://www.php.net/manual/fr/function.is-numeric.php)
 - [Fonction move_upload pour déplacer un fichier *uploadé*](https://www.php.net/manual/fr/function.move-uploaded-file.php)
 
-## Aide sans la validation avec les Regex
+## Aide validation d'un formulaire sans utiliser les Regex
 
 - Utilisez pour les vérifications la fonctions [empty()](https://www.php.net/manual/fr/function.empty) ou [isset()](https://www.php.net/manual/fr/function.isset.php) ou [filter_input](https://www.php.net/manual/fr/function.filter-input.php)
 
-## Aide avec validation via les REGEX (en bonus et en option)
+## Aide validation données d'un formulaire avec l'utilisation des REGEX (en bonus et en option)
 
 Voici des expressions régulières pour les champs du formulaire :
 - email : `"/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i"`
