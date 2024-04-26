@@ -30,6 +30,7 @@ Voici des expressions régulières pour les champs du formulaire :
 - Un utilisateur peut mettre un ou plusieurs actualités dans ses favoris.
 - Une actualité est composée d'un titre, d'une description, d'une date de publication, d'un auteur, d'une URL et d'une image.
 - Un utilisateur possède un nom, prénom, date de naissance, email et mot de passe.
+- Un utilisateur peut avoir zéro ou plusieurs photos.
 
 1. Modélisez à l'aide d'un diagramme de classes UML les indications précédentes
 
@@ -37,9 +38,8 @@ Voici des expressions régulières pour les champs du formulaire :
 
 ## PARTIE II : HTML
 
-1. Créez un formulaire de contact qui permet d'insérer un utilisateur.
-2. Créez un formulaire de contact qui permet d'authentifier un utilisateur.
-Pour l'authentification d'un utilisateur, vous pouvez suivre ce [tutoriel écrit](https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/session-definition-utilisation/) ou ce [tutoriel vidéo](https://www.youtube.com/watch?v=j0a1kQpELRo)
+1. Créez un formulaire de contact qui permet d'insérer un utilisateur avec toutes les informations associées à ce dernier.
+2. Créez un formulaire de contact qui permet d'authentifier un utilisateur à partir de son email et son mot de passe.
 
 ---
 
@@ -60,9 +60,11 @@ Vous devez hacher le mot de passe, pour cela, vous pouvez utilisez la [fonction 
 Voici la démarche à suivre : 
 - Faire une requête avec PDO pour récupérer l'email et le mot de passe à partir de l'email saisi par l'utilisateur, par exemple `SELECT email, password FROM WHERE email="contact@tshimini.fr"`.
 - Comparer le mot de passe en clair avec le mot de passé haché récupérée depuis la base de données(résultat true s'ils sont identiques sinon false)
-- Si la comparaison est ok, créez des variables de session pour stocker l'email, le prénom et le nom.
+- Si la comparaison est ok, créez des variables de session pour stocker l'email, le prénom et le nom. Pour la gestion des sessions, vous pouvez suivre ce [tutoriel écrit](https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/session-definition-utilisation/) ou ce [tutoriel vidéo](https://www.youtube.com/watch?v=j0a1kQpELRo)
 
 6. Créez une nouvelle page PHP, récupérez les flux d'actualités présentes dans le dossier [data](./data/) en PHP et affichez-les à l'aide des [cards de Bootstrap](https://getbootstrap.com/docs/5.0/components/card/)
+
+7. Affichez depuis la nouvelle page, le nom, prénom et adresse email de l'utilisateur connecté en récupérant ses informations depuis la superglobale $_SESSION.
 
 ---
 
