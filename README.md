@@ -36,7 +36,7 @@ Voici des expressions régulières pour les champs du formulaire :
 
 ---
 
-## PARTIE I : UML
+## PARTIE I : UML (optionnelle)
 
 - Un utilisateur peut mettre un ou plusieurs actualités dans ses favoris.
 - Une actualité est composée d'un titre, d'une description, d'une date de publication, d'un auteur, d'une URL et d'une image.
@@ -47,20 +47,20 @@ Voici des expressions régulières pour les champs du formulaire :
 
 ---
 
-## PARTIE II : HTML
+## PARTIE II : HTML (obligatoire)
 
 1. Créez un **formulaire HTML** qui permet d'**insérer un utilisateur** avec toutes les informations associées à ce dernier.
 2. Créez un **formulaire HTML** qui permet d'**authentifier un utilisateur** à partir de son ***email*** et son ***mot de passe***.
 
 ---
 
-## PARTIE III : CSS
+## PARTIE III : CSS (obligatoire)
 
 1. Mettez en forme vos formulaires, un style pour la ***version Mobile***, un autre style pour la ***version Desktop*** (bureau)
 
 ---
 
-## PARTIE IV : PHP et Bootstrap
+## PARTIE IV : PHP et Bootstrap (obligatoire)
 
 1. A partir de votre diagramme de classes, créez vos **classes en PHP** en mettant en place les **espaces de noms** à l'aide de **composer**.
 2. A l'aide de **Doctrine**, ajoutez les **annotations** et créez les **tables** via les **commandes Doctrine**.
@@ -79,13 +79,13 @@ Voici la démarche à suivre :
 
 ---
 
-## PARTIE V : JQuery
+## PARTIE V : JQuery (Optionnelle)
 
 1. Ajoutez des **animations** dans vos pages à l'aide de JQUERY.
 
 ---
 
-## PARTIE VI : évaluation sur HTML, CSS, UML et PHP
+## PARTIE VI : évaluation sur HTML, CSS, UML et PHP (obligatoire)
 
 - [Effectuez cet évaluation d'une durée d'environ 30 min chronométré](https://docs.google.com/forms/d/e/1FAIpQLSfiD4NhWpcptSJ3xihZiojCz73UR1eTWtYIskQ3G2uscNDA0w/viewform)
 

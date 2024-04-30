@@ -1,1 +1,6 @@
 backup
+src
+bin
+bootstrap.php
+composer.*
+/vendor/
