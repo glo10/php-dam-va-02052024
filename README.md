@@ -32,7 +32,7 @@ Utilisez pour les vérifications la fonctions [empty()](https://www.php.net/manu
 Voici des expressions régulières pour les champs du formulaire :
 - Email : `"/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i"`
 - Nom et prénom :  `"/^[a-z]+(?!_)(\s|-)?[a-z]+\$/i"`
-- Mot de passe : `"/^(?!abcdef|qwerty|azerty|123456)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[&\$+\-*\/#~€%^!-_]).{15,36}\$/"`
+- Mot de passe : `"/^(?!abcdef|qwerty|azerty|123456)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[&\$+\-*\/#~€%^!-_]).{15,36}\$/"`, entre 15 et 36 caractères, ne commençant pas par abcedef, ni querty, ni azerty, ni 123456, contenant au moins un chiffre, une lettre minuscule, une lettre majuscule et un caractère spécial entre &, $, -, etc.
 - Pour l'age, à partir de la date de naissance, il faut calculer l'age et vérifier que le résultat est supérieur ou égale à 18 et inférieur à 130. Pour cela, vous pouvez utiliser la classe [la fonction diff() à partir d'un objet DateTime de la date de naissance de l'utilisateur à  comparer avec une instance DateTime de la date du jour](https://www.php.net/manual/fr/datetime.diff.php). Si c'est trop compliqué, changez le champ du formulaire de type *date* en *number* côté front et vérifiez l'âge saisi depuis le formulaire est compris entre 18 et 130.
 
 ---
