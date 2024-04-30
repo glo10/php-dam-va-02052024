@@ -33,14 +33,14 @@ Voici des expressions régulières pour les champs du formulaire :
 - Email : `"/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i"`
 - Nom et prénom :  `"/^[a-z]+(?!_)(\s|-)?[a-z]+\$/i"`
 - Mot de passe : `"/^(?!abcdef|qwerty|azerty|123456)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[&\$+\-*\/#~€%^!-_]).{15,36}\$/"`
-- Pour l'age, à partir de la date de naissance, il faut calculer l'age et vérifier que le résultat est supérieur ou égale à 18 et inférieur à 130. Pour cela, vous pouvez utiliser la classe [la fonction diff() à partir d'un objet DateTime de la date naissance de l'utilisateur auquelle il faut comparer à l'instance DateTime de la date du jour](https://www.php.net/manual/fr/datetime.diff.php). Si c'est trop compliqué, changez le champ du formulaire de type *date* en *number* côté front et vérifiez l'âge saisi depuis le formulaire est compris entre 18 et 130.
+- Pour l'age, à partir de la date de naissance, il faut calculer l'age et vérifier que le résultat est supérieur ou égale à 18 et inférieur à 130. Pour cela, vous pouvez utiliser la classe [la fonction diff() à partir d'un objet DateTime de la date de naissance de l'utilisateur à  comparer avec une instance DateTime de la date du jour](https://www.php.net/manual/fr/datetime.diff.php). Si c'est trop compliqué, changez le champ du formulaire de type *date* en *number* côté front et vérifiez l'âge saisi depuis le formulaire est compris entre 18 et 130.
 
 ---
 
 ## PARTIE I : UML (optionnelle)
 
 - Un utilisateur peut mettre un ou plusieurs actualités dans ses favoris.
-- Une actualité est composée d'un titre, d'un contenu, d'une date de publication, d'un auteur, d'une URL et d'une image.
+- Une actualité est composée d'un titre, d'un contenu, d'une date de publication, d'un auteur, d'un URL et d'une image.
 - Un utilisateur possède un nom, prénom, date de naissance, email et mot de passe.
 - Un utilisateur peut avoir zéro ou plusieurs photos.
 
@@ -67,15 +67,15 @@ Voici des expressions régulières pour les champs du formulaire :
 2. A l'aide de **Doctrine**, ajoutez les **annotations** et créez les **tables** via les **commandes Doctrine**.
 3. **Insérez** les **news(actualités)** depuis les **fichiers JSON** présentes dans le dossier [*data/*](./data)
 4. **Insérez** les **utilisateurs** depuis votre **formulaire d'inscription** dans votre base de données.
-Vous devez **hacher le mot de passe**, pour cela, vous pouvez utilisez la [fonction *password_hash()*](https://www.php.net/manual/fr/function.password-hash)
-5. A partir du formulaire de connexion, **vérifiez le mot de passe en claire saisi par l'utilisateur et le mot de passe haché en base de données**. Vous devez utiliser la [fonction *password_verify()* pour vérifier que 2 mots de passe (un haché et l'autre non) sont identiques](https://www.php.net/manual/fr/function.password-verify.php).
+Vous devez **hacher le mot de passe**, pour cela, utilisez la [fonction *password_hash()*](https://www.php.net/manual/fr/function.password-hash)
+5. A partir du formulaire de connexion, **vérifiez le mot de passe en clair saisi par l'utilisateur et le mot de passe haché en base de données**. Vous devez utiliser la [fonction *password_verify()* pour vérifier que 2 mots de passe (un haché et l'autre non) sont identiques](https://www.php.net/manual/fr/function.password-verify.php).
 Voici la démarche à suivre : 
 - Faites une requête avec ***PDO*** pour récupérer l'email et le mot de passe à partir de l'email saisi par l'utilisateur, par exemple `SELECT email, password FROM user WHERE email="contact@tshimini.fr"`.
-- Comparez le mot de passe en clair avec le mot de passé haché récupérée depuis la base de données (résultat true s'ils sont identiques sinon false)
+- **Comparez le mot de passe en clair avec le mot de passe haché** récupéré depuis la base de données (résultat *true* s'ils sont identiques sinon *false*)
 - Si la comparaison est ok, créez des **variables de session** pour stocker l'email, le prénom et le nom. Pour la gestion des sessions, vous pouvez suivre ce [*tutoriel écrit*](https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/session-definition-utilisation/) ou ce [*tutoriel vidéo*](https://www.youtube.com/watch?v=j0a1kQpELRo)
 
 6. Récupérez les flux d'actualités présentes dans le dossier [data](./data/) et insérez-les dans votre base de données. Attention, l'actualité se trouve dans un tableau à 2 dimensions, dont les clés sont *`['channel']['item']`*
-7. Créez une nouvelle page permettant d'afficher les news depuis votre base de données en utilisant les [cards de Bootstrap](https://getbootstrap.com/docs/5.0/components/card/)
+7. Créez une nouvelle page permettant d'afficher les news depuis votre base de données en utilisant les [*cards de Bootstrap*](https://getbootstrap.com/docs/5.0/components/card/)
 
 _. **Affichez depuis la nouvelle page**, *le nom, prénom et adresse email* de l'utilisateur connecté en récupérant ses informations depuis la superglobale ***`$_SESSION`***. Attention, une page qui utilise les variables de session doit démarrer une session à partir de la fonction [*session_start()*](https://www.php.net/manual/fr/function.session-start.php)
 
@@ -89,11 +89,11 @@ _. **Affichez depuis la nouvelle page**, *le nom, prénom et adresse email* de l
 
 ## PARTIE VI : évaluation sur HTML, CSS, UML et PHP (obligatoire)
 
-- [Effectuez cet évaluation d'une durée d'environ 30 min chronométré](https://docs.google.com/forms/d/e/1FAIpQLSfiD4NhWpcptSJ3xihZiojCz73UR1eTWtYIskQ3G2uscNDA0w/viewform)
+- [Effectuez cette évaluation d'une durée d'environ 30 min chronométré](https://docs.google.com/forms/d/e/1FAIpQLSfiD4NhWpcptSJ3xihZiojCz73UR1eTWtYIskQ3G2uscNDA0w/viewform)
 
 ---
 
-## Illustrations non contractuelles (au niveau du design de vos pages, vous êtes libre de faire une autre mise en page)
+## Illustrations non-contractuelles des pages à réaliser (au niveau de l'UI (User Interface) de vos pages, vous êtes libre de faire une autre mise en page tant que vous respectez les informations à afficher)
 
 ![signin](./img/signin.png)
 
